@@ -111,12 +111,6 @@ Vagrant.configure("2") do |config|
     sudo nginx -s reload
 
 
-    if ! [ -L /var/www/html ]; then
-      rm -rf /var/www/html
-      ln -fs /vagrant /var/www/html
-    fi
-
-    PS1='\e]2;[\u@\h]\a[\e[32;1m\t\e[0m] ${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]> '
     #   apt-get install -y apache2
   SHELL
 end
