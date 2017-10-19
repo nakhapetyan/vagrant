@@ -13,7 +13,7 @@ sudo apt-get install -y memcached
 sudo apt-get install -y redis-server
 sudo apt-get install -y lua5.2
 
-sudo ln -sf /vagrant/nginx-sites-enabled.conf /etc/nginx/sites-enabled/default
+sudo ln -sf /vagrant/nginx.conf /etc/nginx/sites-enabled/default
 sudo systemctl restart php7.0-fpm
 sudo nginx -s reload
 echo 'Nginx started. Open on host machine: http://127.0.0.1:8080'
