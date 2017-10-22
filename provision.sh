@@ -1,6 +1,7 @@
 #!/bin/bash
 set -o xtrace # show commands
 
+
 echo 'Install apps';
 sudo apt-get update -y
 sudo apt-get install -y nginx
@@ -14,26 +15,12 @@ echo 'External configs'
 sudo ln -sf /vagrant/nginx.conf /etc/nginx/sites-enabled/default
 sudo ln -sf /vagrant/php.ini /etc/php/7.0/fpm/php.ini
 
-if ! grep 'memcache.so' /etc/php/7.0/fpm/php.ini; then
-	echo 'Install php7 memcache'
-	cd /tmp
-	wget https://github.com/websupport-sk/pecl-memcache/archive/php7.zip
-	unzip php7.zip
-	cd pecl-memcache-php7
-	phpize
-	./configure
-	sudo make
-	sudo make install
-	echo '' >> /etc/php/7.0/fpm/php.ini
-	echo '[memcache]' >> /etc/php/7.0/fpm/php.ini
-	echo 'extension = "memcache.so"' >> /etc/php/7.0/fpm/php.ini
-fi
-
 sudo systemctl restart php7.0-fpm
 sudo nginx -s reload
 echo 'Nginx started. Open on host machine: http://localhost:8080/'
 
 echo "Install MySSQL"
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q mysql-server
-sudo mysql -e "SHOW DATABASES;"
+sudo mysql -e "UPDATE mysql.user SET Password=PASSWORD('root') WHERE User='root'; FLUSH PRIVILEGES;"
+mysql -uroot -proot -e "SHOW DATABASES;"
 
