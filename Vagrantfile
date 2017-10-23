@@ -26,7 +26,7 @@ Vagrant.configure("2") do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
 
-  config.vm.network "forwarded_port", guest: 80, host: 80        #nginx
+  config.vm.network "forwarded_port", guest: 80, host: 8080        #nginx
   config.vm.network "forwarded_port", guest: 9000, host: 9000    #xdebug
   config.vm.network "forwarded_port", guest: 6379, host: 6379    #redis
   config.vm.network "forwarded_port", guest: 11211, host: 11211  #memcached
@@ -55,6 +55,7 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "..", "/var/www"
+  #config.vm.synced_folder "..", "/var/www", type: "smb", mount_options: ["vers=3.02","mfsymlinks"]
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
