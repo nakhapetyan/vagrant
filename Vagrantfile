@@ -54,8 +54,6 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   config.vm.synced_folder "..", "/var/www"
-  #config.vm.synced_folder "..", "/var/www", type: "rsync", rsync__args: ["--verbose", "--archive", "--delete", "-z"]
-  #config.vm.synced_folder "..", "/var/www", type: "smb", mount_options: ["vers=3.02","mfsymlinks"]
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.

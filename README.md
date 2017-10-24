@@ -22,6 +22,9 @@ Clone this repository to your projects folder and run vagrant.
     $ cd vagrant
     $ vagrant up
 
+Now go to [http://localhost:8080](http://localhost:8080) check out your new server. 
+![screenshot](https://i.imgur.com/bZmei51.png)
+
 
 What's inside:
 --------------
@@ -56,18 +59,31 @@ Usage
 
 ### Add virtual hosts
 
-1. Move your project files to `../your_project_name/www/` 
-2. Add record to *hosts* file `127.0.0.1 your_project_name`
+1. Move your project files to `../project_name/www/` 
+2. Add record to *hosts* file `127.0.0.1 project_name`
 
 Your project will be available at [http://your_project_name:8080](http://your_project_name:8080) url.	 
+ 
+Example of directory tree 
+```shell 
+$ ~/PhpstormProjects> tree -L 2
+.                       --> mapped to VM:/var/www/
+├── project_name
+│   └── www
+├── project_name2
+│   └── www
+└── vagrant             --> mapped to VM:/vagrant/
+    └── Vagrantfile
+ 
+``` 
  
 
 ### Synced folders
 
-Host  | VM
-------------- | -------------
-vagrant/.  | /vagrunt
-vagrant/..  | /var/www
+Host            | VM
+----------------|----------------------
+vagrant/.       | /vagrunt
+vagrant/..      | /var/www
 
 
 ### MySQL
