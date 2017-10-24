@@ -26,8 +26,7 @@ Vagrant.configure("2") do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
 
-  config.vm.network "forwarded_port", guest: 80, host: 8080        #nginx
-  config.vm.network "forwarded_port", guest: 9000, host: 9000    #xdebug
+  config.vm.network "forwarded_port", guest: 80, host: 8080      #nginx
   config.vm.network "forwarded_port", guest: 6379, host: 6379    #redis
   config.vm.network "forwarded_port", guest: 11211, host: 11211  #memcached
   config.vm.network "forwarded_port", guest: 3306, host: 33066   #mysql
@@ -42,7 +41,7 @@ Vagrant.configure("2") do |config|
   # using a specific IP.
   # config.vm.network "private_network", ip: "192.168.33.10"
   config.vm.network "private_network", ip: "192.168.8.8"
-  #config.vm.hostname = "vagrant.local"
+
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -82,5 +81,5 @@ Vagrant.configure("2") do |config|
   # Enable provisioning with a shell script. Additional provisioners such as
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
-  config.vm.provision "shell", path: "provision.sh", run: 'always'
+  config.vm.provision "shell", path: "bootstrap.sh", run: 'always'
 end
