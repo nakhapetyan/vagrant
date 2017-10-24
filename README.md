@@ -62,7 +62,7 @@ Usage
 1. Move your project files to `../project_name/www/` 
 2. Add record to *hosts* file `127.0.0.1 project_name`
 
-Your project will be available at [http://your_project_name:8080](http://your_project_name:8080) url.	 
+Your project will be available at [http://project_name:8080](http://project_name:8080) url.	 
  
 Example of directory tree 
 ```shell 
