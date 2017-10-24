@@ -3,13 +3,13 @@ Vagrant LAMP server
 
 LAMP development stack configuration for Vagrant.
 
-Requrements
+Requirements
 -----------
 
 * [VirtualBox](http://www.virtualbox.org/)
 * [vagrant](http://vagrantup.com/) >= 1.7.0
 
-Installation:
+Installation
 -------------
 
 Download and install [VirtualBox](http://www.virtualbox.org/)
