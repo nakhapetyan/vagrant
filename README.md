@@ -1,4 +1,4 @@
-Vagrant LAMP
+Vagrant LAMP server
 ============
 
 LAMP development stack configuration for Vagrant.
@@ -16,13 +16,13 @@ Download and install [VirtualBox](http://www.virtualbox.org/)
 
 Download and install [vagrant](http://vagrantup.com/)
 
-Clone this repository to your projects folder and run vagrant.
+Clone this repository into your **projects folder** and run vagrant.
 	
 	$ git clone https://github.com/nakhapetyan/vagrant.git	
     $ cd vagrant
     $ vagrant up
 
-Now go to [http://localhost:8080](http://localhost:8080) check out your new server. 
+Now go to [http://localhost:8080](http://localhost:8080) or [http://192.168.8.8](http://192.168.8.8) check out your new server with mapped projects. 
 ![screenshot](https://i.imgur.com/bZmei51.png)
 
 
@@ -46,59 +46,57 @@ Usage
 -----
 ### Start VM
 
-	vagrant up
+	$ vagrant up
 
 ### Stop VM
 
-	vagrant halt
+	$ vagrant halt
 	
 ### Access to VM via ssh
  
-	vagrant ssh
+	$ vagrant ssh
 
 
 ### Add virtual hosts
 
-1. Move your project files to `../project_name/www/` 
-2. Add record to *hosts* file `127.0.0.1 project_name`
+1. Move your project files to `../project_name/www/` directory
+2. Add record to **hosts** file `127.0.0.1 project_name`
 
 Your project will be available at [http://project_name:8080](http://project_name:8080) url.	 
  
 Example of directory tree 
 ```shell 
 $ ~/PhpstormProjects> tree -L 2
-.                       --> mapped to VM:/var/www/
+.                       --> mapped to VM:/var/www/  (http://localhost:8080 or http://192.168.8.8)
 ├── project_name
-│   └── www
+│   └── www             --> mapped to VM:/var/www/project_name/www  (http://project_name:8080)
 ├── project_name2
-│   └── www
+│   └── www             --> mapped to VM:/var/www/project_name2/www  (http://project_name2:8080)
 └── vagrant             --> mapped to VM:/vagrant/
     └── Vagrantfile
  
 ``` 
  
 
-### Synced folders
-
-Host            | VM
-----------------|----------------------
-vagrant/.       | /vagrunt
-vagrant/..      | /var/www
-
-
 ### MySQL
+
+User: **root** Password: *empty* 
  
 Access from VM
 
-	mysql -u root
+	$ mysql -u root
 	
-Access from host
-		
-	mysql -u root -P 33066 
+### Import databases
+
+Put your *.sql or *.sql.gz files to **vagrant/databases** folder and run on VM
+    
+    $ /vagrant/databases/import_all.sh 
 
 
 ### XDebug
 
-PHPStorm [configuration](https://www.sitepoint.com/install-xdebug-phpstorm-vagrant/)
+Server side settings already configured. Just click **Listen Debug Connections** button in PHPStorm and refresh page in browser.
+
+![screenshot](https://i.imgur.com/uxQUDIj.png)
 
 
