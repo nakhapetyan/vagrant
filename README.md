@@ -49,10 +49,8 @@ Usage
 
 	vagrant halt
 	
-### SSH
+### Access to VM via ssh
  
-Access to VM via ssh
-
 	vagrant ssh
 
 
