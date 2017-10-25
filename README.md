@@ -80,7 +80,7 @@ $ ~/PhpstormProjects> tree -L 2
 
 ### MySQL
 
-User: **root** Password: *empty* 
+User: **root** Password: *empty string* 
  
 Access from VM
 
