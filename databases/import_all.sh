@@ -1,6 +1,6 @@
 #!/bin/bash
 set -o xtrace # show commands
 
-find . -name "*.sql*" | while read file; do
+find `dirname $0` -name "*.sql*" | while read file; do
 	zcat -f $file | pv | sudo mysql
 done
