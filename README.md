@@ -57,7 +57,7 @@ Usage
 	$ vagrant ssh
 
 
-### Add virtual hosts
+### Adding virtual hosts
 
 1. Move your project files to `../project_name/www/` directory
 2. Add record to **hosts** file `127.0.0.1 project_name`
