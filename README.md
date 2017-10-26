@@ -95,8 +95,22 @@ Put your *.sql or *.sql.gz files to **vagrant/databases** folder and run on VM
 
 ### XDebug
 
-Server side settings already configured. Just click **Listen Debug Connections** button in PHPStorm and refresh page in browser.
-
+1. Server side settings already configured.
+2. Install [browser toolbar](https://confluence.jetbrains.com/display/PhpStorm/Browser+Debugging+Extensions)
+3. Click **Listen Debug Connections** button in PHPStorm 
+4. Start debug session in browser with the toolbar
 ![screenshot](https://i.imgur.com/uxQUDIj.png)
 
+
+### Adding extra software
+
+Just add install commands to **bootstrap.sh** and reload vagrant. For example install Golang.
+    
+    $ sudo add-apt-repository -y ppa:gophers/archive
+    $ sudo apt update
+    $ sudo apt-get install -y golang-1.9-go
+    
+    On host:
+    
+    $ vagrant reload 
 

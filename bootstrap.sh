@@ -24,6 +24,7 @@ sudo service apache2 restart
 echo "Install MySSQL"
 sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -q mysql-server
 sudo mysql -e "UPDATE mysql.user SET authentication_string = PASSWORD(''), plugin = 'mysql_native_password' WHERE User = 'root'; FLUSH PRIVILEGES; "
+sudo mysql -e "SET GLOBAL sql_mode='';"
 sudo mysql -e "SHOW DATABASES;"
 
 sudo timedatectl set-timezone Europe/Moscow
