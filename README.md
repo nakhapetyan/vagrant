@@ -85,10 +85,10 @@ User: **root** Password: *empty string*
 Access from VM
 
 	$ mysql -u root
-	
+    	
 ### Import databases
 
-Put your *.sql or *.sql.gz files to **vagrant/databases** folder and run on VM
+Put your *.sql or *.sql.gz files to **vagrant/databases** folder and run on the VM
     
     $ /vagrant/databases/import_all.sh 
 
@@ -104,7 +104,7 @@ Put your *.sql or *.sql.gz files to **vagrant/databases** folder and run on VM
 
 ### Adding extra software
 
-Just add install commands to **bootstrap.sh** and reload vagrant. For example install Golang.
+Just add install commands to **bootstrap.sh** and run vagrant provision. For example install Golang.
     
     $ sudo add-apt-repository -y ppa:gophers/archive
     $ sudo apt update
@@ -112,5 +112,5 @@ Just add install commands to **bootstrap.sh** and reload vagrant. For example in
     
     On host:
     
-    $ vagrant reload 
+    $ vagrant provision 
 
