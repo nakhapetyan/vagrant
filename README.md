@@ -99,7 +99,7 @@ Put your *.sql or *.sql.gz files to **vagrant/databases** folder and run on the 
 2. Install [browser toolbar](https://confluence.jetbrains.com/display/PhpStorm/Browser+Debugging+Extensions)
 3. Click **Listen Debug Connections** button in PHPStorm 
 4. Start debug session in browser with the toolbar
-![screenshot](https://i.imgur.com/xfNR6Ip.png)
+![screenshot](https://i.imgur.com/yCE6C4J.png)
 
 
 ### Adding extra software
