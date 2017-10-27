@@ -39,7 +39,7 @@ What's inside:
 * Memcached
 * Redis
 * git, svn
-* mc, vim, screen, tmux, curl, pv
+* mc, vim, curl, pv
 
 
 Usage
