@@ -20,6 +20,7 @@ sudo ln -sf /vagrant/php.ini /etc/php/7.0/apache2/php.ini
 sudo a2enmod rewrite
 sudo a2enmod vhost_alias
 sudo a2enmod ssl
+sudo chmod 0600 /vagrant/server.key
 sudo service apache2 restart
 
 echo "Install MySSQL"
