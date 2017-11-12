@@ -26,7 +26,8 @@ Vagrant.configure("2") do |config|
   # accessing "localhost:8080" will access port 80 on the guest machine.
   # NOTE: This will enable public access to the opened port
 
-  config.vm.network "forwarded_port", guest: 80, host: 8080      #nginx
+  config.vm.network "forwarded_port", guest: 80, host: 8080      #http
+  config.vm.network "forwarded_port", guest: 443, host: 8443     #https
   config.vm.network "forwarded_port", guest: 6379, host: 6379    #redis
   config.vm.network "forwarded_port", guest: 11211, host: 11211  #memcached
   config.vm.network "forwarded_port", guest: 3306, host: 33066   #mysql
