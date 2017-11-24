@@ -17,6 +17,7 @@ sudo apt-get install -y apache2
 sudo apt-get install -y php libapache2-mod-php
 sudo ln -sf /vagrant/apache2.conf /etc/apache2/sites-enabled/000-default.conf
 sudo ln -sf /vagrant/php.ini /etc/php/7.0/apache2/php.ini
+sudo ln -sf /vagrant/php.ini /etc/php/7.0/cli/php.ini
 sudo a2enmod rewrite
 sudo a2enmod vhost_alias
 sudo a2enmod ssl
