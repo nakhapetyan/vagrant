@@ -8,6 +8,7 @@ sudo apt-get install -y mc
 sudo apt-get install -y pv
 sudo apt-get install -y php7.0 php7.0-cli php7.0-common
 sudo apt-get install -y php-memcached php7.0-mbstring php7.0-gd php7.0-intl php7.0-xml php7.0-mysql php7.0-mcrypt php7.0-zip php7.0-json php7.0-opcache php7.0-phpdbg php7.0-imap php7.0-ldap php7.0-pgsql php7.0-pspell php7.0-recode php7.0-tidy php7.0-dev php7.0-gd php7.0-curl php7.0-xml php-redis php-xdebug
+sudo apt-get install -y snmp
 sudo apt-get install -y memcached
 sudo apt-get install -y redis-server
 sudo apt-get install -y lua5.2
