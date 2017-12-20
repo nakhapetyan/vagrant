@@ -109,7 +109,7 @@ Just add install commands to **bootstrap.sh** and run vagrant provision. For exa
     $ sudo add-apt-repository -y ppa:gophers/archive
     $ sudo apt update
     $ sudo apt-get install -y golang-1.9-go
-    $ export PATH=$PATH:/usr/lib/go-1.9/bin
+    $ grep -q -F 'go-1.9' ~/.bashrc || echo 'export PATH=$PATH:/usr/lib/go-1.9/bin' >> ~/.bashrc
     
     On host:
     
